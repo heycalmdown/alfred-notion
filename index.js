@@ -12,12 +12,12 @@ function dashToId(id) {
 
 async function main() {
     const { NOTION_TOKEN, TABLE_ID } = process.env;
-    if (TABLE_ID) return alfy.output([{ title: 'Please set your $TABLE_ID to search', arg: 'https://www.alfredapp.com/help/workflows/advanced/variables/' }]);
-    if (NOTION_TOKEN) return alfy.output([{ title: 'Please set your $NOTION_TOKEN', arg: 'https://www.alfredapp.com/help/workflows/advanced/variables/' }]);
+    if (!NOTION_TOKEN) return alfy.output([{ title: 'Please set your $NOTION_TOKEN', arg: 'https://www.alfredapp.com/help/workflows/advanced/variables/' }]);
+    if (!TABLE_ID) return alfy.output([{ title: 'Please set your $TABLE_ID to search', arg: 'https://www.alfredapp.com/help/workflows/advanced/variables/' }]);
 
-    const notion = new createAgent({ token: process.env.NOTION_TOKEN });
+    const notion = new createAgent({ token: NOTION_TOKEN });
 
-    const tableId = idToDash(process.env.TABLE_ID);
+    const tableId = idToDash(TABLE_ID);
     const pageContainsCollection = await notion.loadPageChunk({ pageId: tableId, limit: 20, chunkNumber: 0, verticalColumns: false });
     const collectionId = _.keys(pageContainsCollection.recordMap.collection)[0];
     const collectionViewId = _.keys(pageContainsCollection.recordMap.collection_view)[0];

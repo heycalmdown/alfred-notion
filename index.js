@@ -19,6 +19,26 @@ async function main() {
 
     const tableId = idToDash(TABLE_ID);
     const pageContainsCollection = await notion.loadPageChunk({ pageId: tableId, limit: 20, chunkNumber: 0, verticalColumns: false });
+    console.log(pageContainsCollection);
+    console.log({ pageId: tableId, limit: 20, chunkNumber: 0, verticalColumns: false });
+
+    const res = await alfy.fetch('https://www.notion.so/api/v3/loadPageChunk', {
+        method: 'POST',
+        headers: {
+            'accept': '*/*',
+            'accept-language': 'en-US:en;q=0.9',
+            'cookie': `token_v2=${NOTION_TOKEN};`,
+            'origin': 'https://www.notion.so',
+            'referer': 'https://www.notion.so',
+            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+            'accept-encoding': 'gzip, deflate',
+            'content-type': 'application/json'
+        },
+        json: { pageId: tableId, limit: 20, chunkNumber: 0, verticalColumns: false },
+        responseType: 'json'
+    });
+    console.log('res', res);
+
     const collectionId = _.keys(pageContainsCollection.recordMap.collection)[0];
     const collectionViewId = _.keys(pageContainsCollection.recordMap.collection_view)[0];
     const table = await notion.queryCollection({ collectionId, collectionViewId, loader: { limit: 500, type: 'table' }});

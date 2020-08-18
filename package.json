@@ -14,7 +14,7 @@
  },
  "license": "ISC",
  "dependencies": {
-  "alfy": "^0.9.1",
+  "alfy": "^0.10.0",
   "lodash": "^4.17.15"
  }
 }

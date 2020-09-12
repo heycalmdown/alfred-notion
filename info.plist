@@ -8,6 +8,21 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>6C8BC776-C2DB-4339-B236-915E02971D0A</key>
+		<array/>
+		<key>770990D5-95A0-4A1B-A88E-F65564A21296</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6C8BC776-C2DB-4339-B236-915E02971D0A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B509FF37-9D8E-47D1-A89F-B8F3544CE956</key>
 		<array>
 			<dict>
@@ -60,7 +75,7 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node index.js "$1"</string>
+				<string>./node_modules/.bin/run-node search_table.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -100,6 +115,78 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>nw</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node getting_note.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>A note for notion.so</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>770990D5-95A0-4A1B-A88E-F65564A21296</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node write_note.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6C8BC776-C2DB-4339-B236-915E02971D0A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -111,6 +198,20 @@
 			<integer>150</integer>
 			<key>ypos</key>
 			<integer>10</integer>
+		</dict>
+		<key>6C8BC776-C2DB-4339-B236-915E02971D0A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>150</integer>
+			<key>ypos</key>
+			<integer>130</integer>
+		</dict>
+		<key>770990D5-95A0-4A1B-A88E-F65564A21296</key>
+		<dict>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>130</integer>
 		</dict>
 		<key>B509FF37-9D8E-47D1-A89F-B8F3544CE956</key>
 		<dict>
@@ -124,9 +225,19 @@
 	<dict>
 		<key>NOTION_TOKEN</key>
 		<string></string>
+		<key>SEEDBED_ID</key>
+		<string></string>
 		<key>TABLE_ID</key>
 		<string></string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>TABLE_ID</string>
+		<string>SEEDBED_ID</string>
+		<string>NOTION_TOKEN</string>
+	</array>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
 	<string></string>
 </dict>

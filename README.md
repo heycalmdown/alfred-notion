@@ -1,6 +1,9 @@
 # alfred-notion
 
-[Alfred](https://www.alfredapp.com) workflow to search from a table of [notion.so](https://notion.so).
+[Alfred](https://www.alfredapp.com) workflow for searching or taking a note with [notion.so](https://notion.so).
+
+
+![Screenshot of alfred-notion](./media/alfred-notion.gif)
 
 ## How to use
 
@@ -29,8 +32,22 @@ added 228 packages from 83 contributors in 10.859s
 
 </details>
 
+----
 
-[Get your token](https://github.com/dragonman225/notionapi-agent/blob/master/documentation/get-token/get-token.md),
+<details>
+<summary>Get your token,</summary>
+<a href="https://github.com/dragonman225/notionapi-agent/blob/master/documentation/get-token/get-token.md">See this</a>
+</details>
+
+----
+
+<details>
+<summary>Get your quick note(seedbed) id,</summary>
+
+![Table ID](./media/seedbed.png)
+</details>
+
+----
 
 <details>
 <summary>And get your table id</summary>
@@ -38,6 +55,12 @@ added 228 packages from 83 contributors in 10.859s
 ![Table ID](./media/tableid.png)
 </details>
 
+----
+
 3. Search your notion table
 
 ![searching a page starts with pro](./media/search.png)
+
+4. Take a quick note
+
+![taking a note](./media/note.png)
